@@ -5,8 +5,15 @@
 </template>
 
 <script>
+
   export default {
-    
+    mounted(){
+      console.log('vuex:', this.$store);
+    },
+    methods: {
+      init() {
+      }
+    },
   }
 </script>
 
