@@ -8,7 +8,7 @@
 
   export default {
     mounted(){
-      console.log('vuex:', this.$store);
+      // console.log('vuex:', this.$store);
     },
     methods: {
       init() {

@@ -1,10 +1,13 @@
 <template>
   <div class="bread">
     <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+      <el-breadcrumb-item
+          v-for="(item,index) in routesArr"
+          :key="index"
+          :to="{ path: item.path }"
+          >
+          {{item.title}}
+      </el-breadcrumb-item>
     </el-breadcrumb>
   </div>
 </template>
@@ -19,6 +22,21 @@
         }]
       }
     },
+    computed:{
+      routesArr(){
+        let temp = []
+        this.$route.matched.map(item =>{
+          if(item.meta.title) {
+            temp.push({
+              title: item.meta.title,
+              path: item.path
+            })
+
+          }
+        })
+        return temp
+      }
+    }
   }
 </script>
 

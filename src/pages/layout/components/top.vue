@@ -3,9 +3,10 @@
     <span class="logoWraper">
       <!-- <img src="@/assets/img/molin.png" alt="" srcset=""> -->
     </span>
+    <span @click="$i18n.locale = $i18n.locale === 'en'? 'zh' : 'en'">切换语言</span>
     <el-dropdown class="userOperate">
       <span class="el-dropdown-link">
-        {{userName}}<i class="el-icon-arrow-down el-icon--right"></i>
+        {{$t('common.name')}}<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item
