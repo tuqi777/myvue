@@ -1,5 +1,4 @@
-console.log('utilsssss');
-module.exports = {
+export default {
   state: {
     name: 'utils'
   }
