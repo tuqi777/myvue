@@ -1,6 +1,7 @@
 <template>
   <div>
     设置主页
+    <p>aaaaaaaaaaa</p>
   </div>
 </template>
 
