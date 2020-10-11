@@ -149,9 +149,6 @@ export default {
     fatherCheck: Function,
     fatherReplace: Function
   },
-  created () {
-    console.log(this.props, '接收的参数')
-  },
   mounted () {
     this.$nextTick(() => {
       console.log(this.props, '接收的参数')

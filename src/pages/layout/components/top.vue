@@ -3,7 +3,6 @@
     <span class="logoWraper">
       <!-- <img src="@/assets/img/molin.png" alt="" srcset=""> -->
     </span>
-    <span @click="$i18n.locale = $i18n.locale === 'en'? 'zh' : 'en'">切换语言</span>
     <el-dropdown class="userOperate">
       <span class="el-dropdown-link">
         {{$t('common.name')}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -17,6 +16,7 @@
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
+    <div class="changeLang" @click="$i18n.locale = $i18n.locale === 'en'? 'zh' : 'en'">切换语言</div>
   </div>
 </template>
 
@@ -42,6 +42,7 @@
   height: 60px;
   line-height: 60px;
   background: #362574;
+  overflow: hidden;
   .logoWraper{
     width: 160px;
     height: 60px;
@@ -56,6 +57,13 @@
     float: right;
     margin-right: 10px;
     color:#fff;
+  }
+  .changeLang{
+    // display: inline-block;
+    float: right;
+    color: #fff;
+    cursor: pointer;
+    padding-right: 10px;
   }
 }
 </style>

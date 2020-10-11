@@ -9,6 +9,10 @@ import '@/assets/css/index.css'
 // i18n国际化
 import i18n from "@/lang";
 
+import echarts from '@/plugins/echarts.js'
+Vue.prototype.echarts = echarts
+
+
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 

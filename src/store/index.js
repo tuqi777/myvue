@@ -7,17 +7,18 @@ const contents = []
 files.keys().map((item) => {
   let name = item.match(/.*\/(.*)\/.*/)[1]
   let temp = {}
-  console.log(item);
   temp[name] = files(item).default
   contents.push(temp);
 });
-console.log(contents, 'modules');
 Vue.use(Vuex)
+
+
 let state = {},
     mutations = {
     },
     actions = {},
     modules = {};
+
 export default new Vuex.Store({
   state,
   mutations,
