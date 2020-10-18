@@ -11,6 +11,7 @@
 
 <script>
 import BasicTable from '@/components/basic-table'
+import {login} from '@/api'
   export default {
     components: {
       BasicTable,
@@ -26,6 +27,9 @@ import BasicTable from '@/components/basic-table'
           upload: true,
         }
       }
+    },
+    mounted () {
+      login();
     },
   }
 </script>

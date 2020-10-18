@@ -11,6 +11,7 @@
 
 <script>
   // import  bar from '@/plugins/echarts'
+  import { login } from '@/api'
   import { option } from './echarts.js'
   import { mapGetters, mapState } from 'vuex'
   export default {
@@ -32,6 +33,7 @@
       // console.log('vuex:', this.$store);
       console.log( 'this is -----', this.echarts);
       this.init();
+      login()
     },
     methods: {
       init () {
