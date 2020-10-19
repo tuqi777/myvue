@@ -114,3 +114,4 @@ function checkStatus(res){
     }
   }
 }
+export default Axios
