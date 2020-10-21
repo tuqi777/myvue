@@ -1,4 +1,4 @@
-import Axios from './axios'
+import axios from './axios'
 
 const request = async function(opt){
   try {
@@ -6,17 +6,18 @@ const request = async function(opt){
       method: 'get',
       ifHandleError: true
     },opt)
-    options.baseUrl = autoMatch(options.prefix)
-    const res = await Axios(options)
+    // options.baseUrl = autoMatch(options.prefix)
+    options.baseUrl = '/apis'
+    const res = await axios(options)
     if (!res.code ===200 && options.ifHandleError) {
       // todo 全局提示错误信息
     }
     return res
 
   } catch (error) {
-      if(ifHandleError) {
+      // if(options.ifHandleError) {
         // todo 全局提示错误信息
-      }
+      // }
       return error
   }
 }

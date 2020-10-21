@@ -4,21 +4,21 @@ import Vue from 'vue'
 
 Vue.use(axios)
 
-const Axios = axios.create({
-  baseUrl: process.env.Base_URL,
-  timeout: 1000,
-  headers: {
-    'X-Custom-Header': 'foobar'
-  },
-  transformRequest: [function(data){
-    return data
-  }],
-  transformResponse: [function(data){
-    return JSON.parse(data)
-  }]
-})
+// const axios = axios.create({
+//   baseUrl: 'http://localhost:3000',
+//   timeout: 1000,
+//   // headers: {
+//   //   'X-Custom-Header': 'foobar'
+//   // },
+//   transformRequest: [function(data){
+//     return data
+//   }],
+//   transformResponse: [function(data){
+//     return JSON.parse(data)
+//   }]
+// })
 
-Axios.interceptors.request.use(function(config) {
+axios.interceptors.request.use(function(config) {
   config.headers = Object.assign(config.method === 'get' ? {
     'Accept': 'application/json',
     'content-type': 'application/json;charset=UTF-8'
@@ -45,7 +45,7 @@ Axios.interceptors.request.use(function(config) {
 })
 
 
-Axios.interceptors.response.use(function (response) {
+axios.interceptors.response.use(function (response) {
   // 对响应的数据结构处理，
   const res = response.data || {}
   return Promise.resolve( checkStatus(res) )
@@ -114,4 +114,4 @@ function checkStatus(res){
     }
   }
 }
-export default Axios
+export default axios

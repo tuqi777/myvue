@@ -14,9 +14,8 @@ module.exports = {
   //   unknownContextCritical: false,
   // }
   devServer:{
-    port: 3000,
     proxy:{
-      'apis': {
+      '/apis': {
         target: 'http://localhost:3000',
         changeOrigin: true,
         pathRewrite: {

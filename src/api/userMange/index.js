@@ -1,3 +1,6 @@
-export function login() {
-  console.log('login');
+import request from '../request'
+
+export function login(data) {
+  console.log('login',data);
+  return request(data)
 }
