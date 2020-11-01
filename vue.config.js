@@ -21,6 +21,13 @@ module.exports = {
         pathRewrite: {
           '^/apis': ''
         }
+      },
+      '/apis-test': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/apis-test': ''
+        }
       }
     }
   },

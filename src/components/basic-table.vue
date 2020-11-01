@@ -150,9 +150,6 @@ export default {
     fatherReplace: Function
   },
   mounted () {
-    this.$nextTick(() => {
-      console.log(this.props, '接收的参数')
-    })
   },
   data () {
     return {

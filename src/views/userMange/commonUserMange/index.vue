@@ -1,6 +1,7 @@
 <template>
   <div>
     <BasicTable
+      v-loading="tableLoading"
       :tableData="tableData"
       :tableOptions="tableOptions"
       :treeType="treeType"
@@ -13,14 +14,28 @@
 <script>
 import BasicTable from '@/components/basic-table'
 import {login} from '@/api/userMange'
+import request from '@/api/request'
   export default {
     components: {
       BasicTable,
     },
     data() {
       return {
+        tableLoading: false,
         tableData: [],
-        tableOptions: [],
+        tableOptions: [{
+          label: 'ID',
+          prop:'id'
+        },{
+          label: '姓名',
+          prop:'name'
+        },{
+          label: '年龄',
+          prop:'age'
+        },{
+          label: '职位',
+          prop:'job'
+        }],
         treeType: {
           type: 'operate',
           edit: true,
@@ -30,18 +45,42 @@ import {login} from '@/api/userMange'
       }
     },
     mounted () {
-      login();
+      // this.loginTest();
+      this.loadingTable()
     },
     methods: {
+      loadingTable() {
+        this.tableLoading = true;
+        request({
+          method: 'get',
+          url: '/parameter/ccc',
+          params: {
+            type: 'mock'
+          }
+        }).then(res => {
+          console.log(res, 'mock接口返回值');
+          try {
+            if (res.status === 200) {
+              this.tableData = res
+            } else {
+              this.tableData = []
+            }
+          } catch (error) {
+            console.log(error, 'table接口报错');
+          }
+          this.tableLoading =false
+        })
+      },
       loginTest() {
         login({
           method:'get',
-          url: '/apis/login',
+          url: '/parameter/query',
           params: {
             name: 'lp'
           }
         }).then(function(res){
           console.log(res, '测试接口返回值');
+
         })
       }
     },
