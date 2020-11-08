@@ -59,15 +59,17 @@ import request from '@/api/request'
           }
         }).then(res => {
           console.log(res, 'mock接口返回值');
-          try {
-            if (res.status === 200) {
-              this.tableData = res
-            } else {
-              this.tableData = []
-            }
-          } catch (error) {
-            console.log(error, 'table接口报错');
-          }
+          this.tableData = res.rows
+
+          // try {
+          //   if (res.status === 200) {
+          //     this.tableData = res.rows
+          //   } else {
+          //     this.tableData = []
+          //   }
+          // } catch (error) {
+          //   console.log(error, 'table接口报错');
+          // }
           this.tableLoading =false
         })
       },

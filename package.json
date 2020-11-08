@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve --test",
     "build:dev": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "add": "node scripts/addVueComponent/addFile"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -29,6 +30,7 @@
     "@vue/eslint-config-standard": "^5.1.0",
     "autoprefixer": "^10.0.1",
     "babel-eslint": "^10.0.3",
+    "chalk": "^4.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.1",
