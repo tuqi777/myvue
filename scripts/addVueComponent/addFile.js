@@ -6,6 +6,7 @@ const log = message => console.log(chalk.green(`${message}`));
 const successLog = message => console.log(chalk.blueBright(`${message}`));
 const errLog = message => console.log(chalk.red(`${message}`));
 const { vueTemplate } = require('./template')
+console.log(process.argv.splice(2))
 const _ = process.argv.splice(2)[0] === '-com'
 const createVue = (path, data) => {
     if(fs.existsSync(path)){
@@ -64,13 +65,12 @@ process.stdin.on('data', async chunk => {
         const inputArr = inputName.split('/')
         const directory = inputArr[0]
         const componentName = inputArr[inputArr.length -1]
-
+        log(`${directory}+${componentName}文件夹和组件名称`)
         // 页面组件目录
         const componentDirectory = resolve('../../src/views',directory)
         // vue组件
         const vueName = resolve(componentDirectory, `${componentName}`)
         const hasComponentDirectory = fs.existsSync(componentDirectory)
-        log(inputArr,directory,componentName,componentDirectory,vueName,hasComponentDirectory)
         // 判断该目录是否已存在
         if(hasComponentDirectory) {
             log(`${componentDirectory}组件目录已存在，请重新输入`)
@@ -81,7 +81,7 @@ process.stdin.on('data', async chunk => {
         }
         try {
             log(`正在生成vue文件${componentName}`)
-            await createVue((componentDirectory), vueTemplate(componentName))
+            await createVue((componentDirectory+'/'+componentName+'.vue'), vueTemplate(componentName))
         } catch (error) {
             errLog(error.message)
         }
