@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+// 自动生成页面--自动添加路由
+import addRoute from './addRoute'
 Vue.use(VueRouter)
 
 const routes = [
@@ -97,7 +97,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  routes
+  routes:routes.concat(addRoute)
 })
 
 export default router

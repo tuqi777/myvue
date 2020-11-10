@@ -75,7 +75,7 @@ process.stdin.on('data', async chunk => {
         if(hasComponentDirectory) {
             log(`${componentDirectory}组件目录已存在，请重新输入`)
             return
-        } else { 
+        } else {
             log(`正在生成component目录${componentDirectory}`)
             await createDirectory(componentDirectory)
         }
