@@ -76,14 +76,7 @@
             align="center"
             show-overflow-tooltip
           >
-
-
-
-
-
-
-          
-            <template slot-scope="scope">{{j.prop == 'amount' ? '￥' : '' +scope.row[j.pr]}}</template>
+            <template slot-scope="scope">{{j.prop == 'amount' ? '￥' : '' +scope.row[j.prop]}}</template>
           </el-table-column>
         </div>
       </el-table-column>
