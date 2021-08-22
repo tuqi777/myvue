@@ -15,6 +15,7 @@
 
 <script>
   import MenuItem from './menuItem.vue';
+  // import pic from '@/assets/images/cat&girl.jpg'
   export default {
     components: {
       MenuItem,
@@ -23,28 +24,34 @@
       return {
         isCollapse: false,
         menuList: [{
-          title: '工作台',
+          title: 'Home',
           path: '/workBeanch',
           menuId: '1-1',
-          iconUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2713042258,860821358&fm=26&gp=0.jpg',
+          iconUrl: '@/assets/img/cat&girl.jpg',
         },{
-          title: '用户管理',
-          path: '/userMange',
-          iconUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2713042258,860821358&fm=26&gp=0.jpg',
+          title: 'Demo',
+          path: '/ele',
+          iconUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601640624517&di=5e31c0dfbaf638207f40e1117315453c&imgtype=0&src=http%3A%2F%2Fwww.suntop168.com%2Fblog%2Fzb_users%2Fupload%2F2014%2F2%2F998919B2.png',
           menuId: '2-1',
           children: [{
-            title: '普通用户管理',
-            path: '/userMange/commonUserMange',
-            iconUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2713042258,860821358&fm=26&gp=0.jpg',
+            title: 'elementui',
+            path: '/ele',
+            iconUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601640624517&di=5e31c0dfbaf638207f40e1117315453c&imgtype=0&src=http%3A%2F%2Fwww.suntop168.com%2Fblog%2Fzb_users%2Fupload%2F2014%2F2%2F998919B2.png',
             menuId: '2-1-1',
+            children: [{
+              title: 'form',
+              path: '/ele/form',
+              iconUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601640624517&di=5e31c0dfbaf638207f40e1117315453c&imgtype=0&src=http%3A%2F%2Fwww.suntop168.com%2Fblog%2Fzb_users%2Fupload%2F2014%2F2%2F998919B2.png',
+              menuId: '2-1-1-1',
+            }]
           },{
-            title: 'VIP用户管理',
+            title: 'components',
             path: '/userMange/vipUserMange',
             iconUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2713042258,860821358&fm=26&gp=0.jpg',
             menuId: '2-1-2',
           }]
         },{
-          title: '设置',
+          title: 'Settings',
           path: '/setting',
           menuId: '9-1',
           iconUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2713042258,860821358&fm=26&gp=0.jpg',

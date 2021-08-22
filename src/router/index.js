@@ -32,25 +32,36 @@ const routes = [
           import(/* webpackChunkName: "workBeanch" */ "@/views/workBeanch"),
       },
       {
-        path: "/userMange",
-        name: "userMange",
-        redirect: "/userMange/commonUserMange",
+        path: "/ele",
+        name: "ele",
+        redirect: "/ele/form",
         meta: {
-          title: "用户管理",
+          title: "form",
         },
         // redirect: "/userMange/commonUserMange",
         component: () =>
-          import(/* webpackChunkName: "userMange" */ "@/views/userMange"),
+          import(/* webpackChunkName: "userMange" */ "@/views/ele"),
         children: [
           {
-            path: "commonUserMange",
-            name: "commonUserMange",
+            path: "table",
+            name: "table",
             meta: {
-              title: "普通用户管理",
+              title: "table",
             },
             component: () =>
               import(
-                /* webpackChunkName: "commonUserMange" */ "@/views/userMange/commonUserMange"
+                /* webpackChunkName: "commonUserMange" */ "@/views/ele/commonUserMange"
+              ),
+          },
+          {
+            path: "form",
+            name: "form",
+            meta: {
+              title: "form",
+            },
+            component: () =>
+              import(
+                /* webpackChunkName: "commonUserMange" */ "@/views/ele/form"
               ),
           },
           {
@@ -61,7 +72,7 @@ const routes = [
             },
             component: () =>
               import(
-                /* webpackChunkName: "vipUserMange" */ "@/views/userMange/vipUserMange"
+                /* webpackChunkName: "vipUserMange" */ "@/views/ele/vipUserMange"
               ),
           },
         ],

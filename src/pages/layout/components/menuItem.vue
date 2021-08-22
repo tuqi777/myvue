@@ -7,7 +7,8 @@
           :key="menuId"
           :index="menuId+''">
           <template slot="title">
-            <img :src="menuItem.iconUrl" class="menuIconForImg">
+            <img src="@/assets/img/cat&girl.jpg" class="menuIconForImg">
+            <!-- <img :src="menuItem.iconUrl" class="menuIconForImg"> -->
             <span slot="title">{{menuItem.title}}</span>
           </template>
           <!-- 子级--循环调用 -->
@@ -19,7 +20,8 @@
           :key="menuId"
           @click="goPath(menuItem)">
           <template>
-            <img :src="menuItem.iconUrl" class="menuIconForImg">
+            <img src="@/assets/img/cat&girl.jpg" class="menuIconForImg">
+            <!-- <img :src="menuItem.iconUrl" class="menuIconForImg"> -->
             <span slot="title">{{menuItem.title}}</span>
           </template>
       </el-menu-item>
