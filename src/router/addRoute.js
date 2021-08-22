@@ -1,7 +1,7 @@
 
 function addToConf(str) {
     str += '// add-flag' // 添加的位置标记
-    var confStr = handleConfRouStr(readF(path.resolve('./src/addRoute.js')), str)
+    let confStr = handleConfRouStr(readF(path.resolve('./src/addRoute.js')), str)
     writeF(path.resolve('./src/addRoute.js'), confStr)
     shell.echo('路由添加成功!')
     shell.echo('结束生成页面')

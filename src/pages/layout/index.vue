@@ -33,6 +33,7 @@
     position: fixed;
     top:60px;
     left:200px;
+    overflow: auto;
   }
 }
 </style>

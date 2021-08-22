@@ -8,20 +8,36 @@
     >
     </BasicTable>
     <el-button type="primary" @click="loginTest">login测试</el-button>
+    <!-- 测试插件 -->
+    <draggable v-model="myArray" group="people" @start="drag=true" @end="drag=false">
+      <div v-for="(element,index) in myArray" :key="index">{{element.name}}</div>
+    </draggable>
   </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
 import BasicTable from '@/components/basic-table'
 import {login} from '@/api/userMange'
-import request from '@/api/request'
   export default {
     components: {
       BasicTable,
+      draggable
     },
     data() {
       return {
+        drag:false,
         tableLoading: false,
+        myArray:[{
+          id: 1,
+          name:'111'
+        },{
+          id: 2,
+          name:'222'
+        },{
+          id: 3,
+          name:'333'
+        }],
         tableData: [],
         tableOptions: [{
           label: 'ID',
@@ -46,12 +62,12 @@ import request from '@/api/request'
     },
     mounted () {
       // this.loginTest();
-      this.loadingTable()
+      // this.loadingTable()
     },
     methods: {
       loadingTable() {
         this.tableLoading = true;
-        request({
+        this.$http({
           method: 'get',
           url: '/parameter/ccc',
           params: {
@@ -76,7 +92,7 @@ import request from '@/api/request'
       loginTest() {
         login({
           method:'get',
-          url: '/parameter/query',
+          url: '/apis/parameter/query',
           params: {
             name: 'lp'
           }

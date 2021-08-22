@@ -41,7 +41,7 @@
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background: #362574;
+  background: #293c55;
   overflow: hidden;
   .logoWraper{
     width: 160px;

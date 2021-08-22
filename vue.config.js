@@ -8,7 +8,8 @@ module.exports = {
   //   path: path.resolve(__dirname,'dist'),
   //   filename: '[name].js'
   // },
-  publicPath: "",
+  publicPath: "./",
+  // assetsPublicPath: './',
   productionSourceMap: false,
   // module:{
   //   unknownContextCritical: false,
@@ -16,7 +17,7 @@ module.exports = {
   devServer:{
     proxy:{
       '/apis': {
-        target: 'http://localhost:3000',
+        target: 'http://192.168.8.110:8080',
         changeOrigin: true,
         pathRewrite: {
           '^/apis': ''
@@ -46,7 +47,7 @@ module.exports = {
   pluginOptions: {
     DllPlugin: new webpack.DllPlugin({
       context: __dirname,
-      name: "[name]_dll",
+      name: "[111]_dll",
       path: path.resolve(__dirname, "../dist/manifest.json"),
     }),
   },

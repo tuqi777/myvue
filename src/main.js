@@ -6,7 +6,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/index.css'
 import request from '@/api/request'
-require('./mock');
+// require('./mock');
 
 // i18n国际化
 import i18n from "@/lang";

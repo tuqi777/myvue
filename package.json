@@ -1,11 +1,11 @@
 {
-  "name": "basic",
+  "name": "TheOne",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve --test",
-    "build:dev": "vue-cli-service build",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "add": "node scripts/addVueComponent/addFile",
     "bpage": "node ./scripts/autoBuildPage/build-page"
@@ -18,8 +18,9 @@
     "graceful-fs": "^4.2.4",
     "lodash": "^4.17.20",
     "vue": "^2.6.11",
-    "vue-i18n": "^8.21.1",
+    "vue-i18n": "8.21.1",
     "vue-router": "^3.1.5",
+    "vuedraggable": "^2.24.3",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
